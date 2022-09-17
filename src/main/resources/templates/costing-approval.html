@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>iLabel Costing Approval</title>
+    <style>
+        table{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            display: table;
+        }
+
+        th{
+            font-weight: 500;
+        }
+
+        tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        td {
+            padding: 8px 8px;
+            display: table-cell;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        td:first-child {
+            padding-left: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="w3-container">
+    <p><b>Respected Sir,</b></p>
+
+<p>Please find the costing details below.</p>
+
+<table class="w3-table-all">
+    <tr><td><b>Entry Date</b></td><td><span th:text="${entryDate}"></span></td></tr>
+    <tr><td><b>Ref No</b></td><td><span th:text="${refNo}"></span></td></tr>
+    <tr><td><b>Product Name</b></td><td><span th:text="${productName}"></span></td></tr>
+    <tr><td><b>Customer Name</b></td><td><span th:text="${customerName}"></span></td></tr>
+    <tr><td><b>Trim Type</b></td><td><span th:text="${trimType}"></span></td></tr>
+    <tr><td><b>Length</b></td><td><span th:text="${productLength}"></span></td></tr>
+    <tr><td><b>Width</b></td><td><span th:text="${productWidth}"></span></td></tr>
+</table>
+
+<br>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td><b>S No</b></td>-->
+<!--            <td><b>Quantity Slab</b></td>-->
+<!--            <td><b>Price</b></td>-->
+<!--        </tr>-->
+<!--        <tr th:each="obj, iterator:${slabRates}">-->
+<!--            <td th:text="${iterator.count}"></td>-->
+<!--            <td th:text="${obj.quantitySlab}"></td>-->
+<!--            <td th:text="${obj.price}"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<p>Kindly Click on the link given below to approve / reject the costing sheet</p>
+<span >Approval Link: </span>
+<a th:href="${approvalLink}" th:text="${approvalLink}"></a>
+
+<br><br>
+
+<p>Thanks & Regards<p>
+    <i>iLabel Team</i>
+</div>
+</body>
+</html>
